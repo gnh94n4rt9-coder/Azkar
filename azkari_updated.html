@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أذكاري</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f7f2;color:#24352b}
+header{background:#315b46;color:#fff;text-align:center;padding:22px 15px}
+h1{margin:0 0 7px} header p{margin:0}
+.container{max-width:800px;margin:20px auto;padding:0 14px}
+.card{background:#fff;border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:0 5px 18px #0001}
+.card h2{color:#315b46;margin:0 0 10px}
+.zikr{font-size:21px;line-height:2;text-align:center;margin:15px 0}
+.count{text-align:center;color:#607268;margin-bottom:12px}
+button{display:block;margin:auto;border:0;border-radius:12px;background:#315b46;color:#fff;padding:12px 25px;font-size:18px}
+.reset{background:#8a6d3b;margin:20px auto}
+</style>
+</head>
+<body>
+<header><h1>🌿 أذكاري</h1><p>اذكر الله واطمئن قلبك</p></header>
+<div class="container">
+
+<div class="card"><h2>سبحان الله</h2><div class="zikr">سُبْحَانَ اللهِ</div><div class="count">العدد: <span id="c1">0</span> / 33</div><button onclick="count('c1',33)">اضغط للتسبيح</button></div>
+
+<div class="card"><h2>الحمد لله</h2><div class="zikr">الْحَمْدُ لِلَّهِ</div><div class="count">العدد: <span id="c2">0</span> / 33</div><button onclick="count('c2',33)">اضغط للتحميد</button></div>
+
+<div class="card"><h2>الله أكبر</h2><div class="zikr">اللهُ أَكْبَرُ</div><div class="count">العدد: <span id="c3">0</span> / 34</div><button onclick="count('c3',34)">اضغط للتكبير</button></div>
+
+<div class="card"><h2>الاستغفار</h2><div class="zikr">أَسْتَغْفِرُ اللهَ وَأَتُوبُ إِلَيْهِ</div><div class="count">العدد: <span id="c4">0</span> / 100</div><button onclick="count('c4',100)">اضغط للاستغفار</button></div>
+
+<div class="card"><h2>الصلاة على النبي ﷺ</h2><div class="zikr">اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى نَبِيِّنَا مُحَمَّدٍ</div><div class="count">العدد: <span id="c5">0</span> / 100</div><button onclick="count('c5',100)">اضغط للصلاة على النبي</button></div>
+
+<div class="card"><h2>لا إله إلا الله وحده لا شريك له</h2><div class="zikr">لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</div><div class="count">العدد: <span id="c6">0</span> / 100</div><button onclick="count('c6',100)">اضغط للذكر</button></div>
+
+<div class="card"><h2>لا حول ولا قوة إلا بالله</h2><div class="zikr">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ</div><div class="count">العدد: <span id="c7">0</span> / 100</div><button onclick="count('c7',100)">اضغط للذكر</button></div>
+
+<div class="card"><h2>سورة الإخلاص</h2><div class="zikr">قُلْ هُوَ اللهُ أَحَدٌ ۝ اللهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ</div><div class="count">العدد: <span id="c8">0</span> / 51</div><button onclick="count('c8',51)">اضغط للقراءة</button></div>
+
+<div class="card"><h2>سيد الاستغفار</h2><div class="zikr">اللَّهُمَّ أَنْتَ رَبِّي، لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.</div><div class="count">العدد: <span id="c9">0</span> / 10</div><button onclick="count('c9',10)">اضغط للاستغفار</button></div>
+
+<button class="reset" onclick="resetAll()">إعادة جميع العدادات</button>
+</div>
+<script>
+function count(id,max){let e=document.getElementById(id),n=Number(e.textContent);if(n<max)e.textContent=++n}
+function resetAll(){document.querySelectorAll('.count span').forEach(e=>e.textContent='0')}
+</script>
+</body>
+</html>
